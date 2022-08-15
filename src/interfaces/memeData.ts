@@ -5,7 +5,7 @@ export interface MemeData {
   }
 }
 
-interface Meme {
+export interface Meme {
   id: string
   name: string
   url: string

@@ -1,23 +1,27 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
+import { Meme } from "../interfaces/memeData"
 
 const initialState = {
   showModal: false,
-  modalImg: ""
+  modalMeme: {} as Meme
 }
 
 export const modalSlice = createSlice({
   name: "modal",
   initialState,
   reducers: {
-    toggleModal: (state) => {
-      state.showModal = !state.showModal
+    toggleModalOn: (state) => {
+      state.showModal = true
+    },
+    toggleModalOff: (state) => {
+      state.showModal = false
     },
     setModalImg: (state, action) => {
-      state.modalImg = action.payload
+      state.modalMeme = action.payload
     }
   },
 })
 
-export const { toggleModal, setModalImg } = modalSlice.actions
+export const { toggleModalOn, toggleModalOff, setModalImg } = modalSlice.actions
 
 export default modalSlice.reducer
