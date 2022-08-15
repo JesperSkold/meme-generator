@@ -13,3 +13,11 @@ export interface Meme {
   height: number
   "box_count": number
 }
+
+export interface NewMeme {
+  success: boolean
+  data: {
+    url: string,
+    page_url: string
+  }
+}
