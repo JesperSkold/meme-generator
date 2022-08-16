@@ -6,10 +6,7 @@ export const postMeme = async (payload: any) => {
     },
     body: new URLSearchParams({ ...payload }),
   })
-
   const data = response.json()
-  console.log(await data)
-
   return data
 }
 

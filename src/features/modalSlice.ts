@@ -6,20 +6,6 @@ export const postNewMeme = createAsyncThunk("newMeme/postNewMeme", async (payloa
   return await postMeme({...payload})
 })
 
-// interface ModalState {
-//   showModal: boolean
-//   modalMeme: Meme
-//   newMeme: NewMeme
-//   status: "idle" | "pending" | "succeeded" | "rejected"
-// }
-
-// const initialState: ModalState = {
-//   showModal: false,
-//   modalMeme: { id: "", name: "", url: "", width: 0, height: 0, box_count: 0 },
-//   newMeme: { success: false, data: { url: "", page_url: "" } },
-//   status: "idle",
-// }
-
 const initialState = {
   showModal: false,
   modalMeme: {} as Meme,

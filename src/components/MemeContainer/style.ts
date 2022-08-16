@@ -14,6 +14,3 @@ export const Gallery = styled.section`
     object-fit: cover;
   }
 `
-
-
-export const MemeWrapper = styled.article``

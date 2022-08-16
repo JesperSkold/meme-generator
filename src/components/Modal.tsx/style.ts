@@ -13,10 +13,10 @@ export const ModalOverlay = styled.div`
 `
 
 export const ModalBody = styled.div`
-  background-color: #ffffff;
-  border: 1px solid #bebebe;
+  background: #2d2d2d;
+  border: 1px solid #2d2d2d9d;
   border-radius: 2px;
-  padding: 1rem;
+  padding: 2rem;
 `
 
 export const MemeImg = styled.img`
@@ -45,5 +45,5 @@ export const NewMemeBtn = styled.button`
 `
 
 export const LinkStatus = styled.p`
-align-self: center;
+  align-self: center;
 `

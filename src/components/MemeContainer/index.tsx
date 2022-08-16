@@ -16,17 +16,6 @@ const MemeContainer = () => {
   }, [])
 
   return (
-    // <Gallery>
-    //   {memeData &&
-    //     memeData.data.memes.map((meme, i) => (
-    //       <MemeWrapper key={meme.id} onClick={() => handleClick(meme)}>
-    //         {/* <p>{meme.name}</p>
-    //         <p>{meme.id}</p> */}
-    //         {/* <GalleryImg src={meme.url} className={`GalleryImg${i}`} /> */}
-    //         <ImageGridItem meme={meme} />
-    //       </MemeWrapper>
-    //     ))}
-    // </Gallery>
     <Gallery>
       {memeData &&
         memeData.data.memes.map((meme, i) => (
