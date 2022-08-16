@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const ModalOverlay = styled.div`
   position: fixed;
@@ -17,16 +17,33 @@ export const ModalBody = styled.div`
   border: 1px solid #bebebe;
   border-radius: 2px;
   padding: 1rem;
-
 `
 
 export const MemeImg = styled.img`
-width: auto;
-height: 60vh;
+  width: auto;
+  height: 60vh;
 `
 
-export const MemeTextForm = styled.form`
+export const NewMemeTextForm = styled.form`
   display: flex;
   justify-content: center;
   flex-direction: column;
+`
+
+export const NewMemeTextBox = styled.input`
+  padding: 0.5rem;
+  margin: 0.5rem;
+  width: 80%;
+  align-self: center;
+`
+
+export const NewMemeBtn = styled.button`
+  padding: 1rem;
+  margin-top: 1rem;
+  width: 12rem;
+  align-self: center;
+`
+
+export const LinkStatus = styled.p`
+align-self: center;
 `

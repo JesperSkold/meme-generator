@@ -2,44 +2,47 @@ import React, { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { postMeme } from "../../api/postMeme"
 import { AppDispatch, RootState } from "../../app/store"
-import { toggleModalOff } from "../../features/modalSlice"
+import { postNewMeme, toggleModalOff } from "../../features/modalSlice"
 import { NewMeme } from "../../interfaces/memeData"
-import { ModalOverlay, ModalBody, MemeImg, MemeTextForm } from "./style"
-
-
+import Spinner from "../Spinner"
+import { ModalOverlay, ModalBody, MemeImg, NewMemeTextForm, NewMemeTextBox, NewMemeBtn, LinkStatus } from "./style"
 
 const Modal = () => {
-  const { modalMeme } = useSelector((state: RootState) => state.modal)
-  const [newMeme, setNewMeme] = useState<NewMeme>()
+  const { modalMeme, newMeme, status } = useSelector((state: RootState) => state.modal)
+  const [copyTextBool, setCopyTextBool] = useState<boolean>(false)
   const dispatch = useDispatch<AppDispatch>()
   const [payload, setPayload] = useState({
     template_id: modalMeme.id,
     username: process.env.REACT_APP_PUBLIC_IMGFLIP_USER_ID || "",
-    password: process.env.REACT_APP_PUBLIC_IMGFLIP_PASSWORD || ""
+    password: process.env.REACT_APP_PUBLIC_IMGFLIP_PASSWORD || "",
   })
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setNewMeme(await postMeme(payload))
+    dispatch(postNewMeme(payload))
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPayload({...payload, [e.target.name]: e.target.value})
-    
+    setPayload({ ...payload, [e.target.name]: e.target.value })
   }
   
+  const copyTextHandler = () => {
+    navigator.clipboard.writeText(newMeme.data.url)
+    setCopyTextBool(true)
+  }
+
   return (
-   <ModalOverlay onClick={() => dispatch(toggleModalOff())}> 
-      <ModalBody onClick={e => e.stopPropagation()}>
-        <MemeImg src={newMeme?.success ? newMeme.data.url : modalMeme.url} alt="Picture of a meme" />
-        <MemeTextForm onSubmit={(e) => handleSubmit(e) }>
-          {[...Array(modalMeme.box_count)].map((e, i) => (
-            <input key={i} type="text" placeholder={`text${i+1}`} name={`boxes[${i}][text]`} onChange={(e) => handleChange(e)}/>
+    <ModalOverlay onClick={() => dispatch(toggleModalOff())}>
+      <ModalBody onClick={(e) => e.stopPropagation()}>
+        {status === "pending" && <Spinner />}
+        <MemeImg src={newMeme.success ? newMeme.data.url : modalMeme.url} alt="Picture of a meme" />
+        <NewMemeTextForm onSubmit={(e) => handleSubmit(e)}>
+          {[...Array(modalMeme.box_count)].map((elem, i) => (
+            <NewMemeTextBox key={i} type="text" placeholder={`Text ${i + 1}`} name={`boxes[${i}][text]`} onChange={(e) => handleChange(e)} />
           ))}
-          {/* <input name="text0" type="text" onChange={(e) => handleChange(e)}/>
-          <input name="text1" type="text" onChange={(e) => handleChange(e)}/> */}
-          <button>SEND</button>
-        </MemeTextForm>
+          {newMeme.success ? <NewMemeBtn onClick={() => copyTextHandler()}>Copy link to your meme</NewMemeBtn> : <NewMemeBtn>Generate your meme!</NewMemeBtn>}
+            {copyTextBool && <LinkStatus>Link to meme successfully copied, share it with your friends!</LinkStatus>}
+        </NewMemeTextForm>
       </ModalBody>
     </ModalOverlay>
   )
