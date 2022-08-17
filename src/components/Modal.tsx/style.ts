@@ -46,4 +46,12 @@ export const NewMemeBtn = styled.button`
 
 export const LinkStatus = styled.p`
   align-self: center;
+  color: white;
+  margin-top: 1rem;
+`
+
+export const MemeName = styled.h2`
+  color: white;
+  text-align: center;
+  margin-bottom: 1rem;
 `

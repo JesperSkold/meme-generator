@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import { getMemes } from "../api/getMemes"
-import { MemeData } from "../interfaces/memeData"
+import { Meme, MemeData } from "../interfaces/memeData"
 
 export const fetchMemes = createAsyncThunk("memes/fetchMemes", async () => {
   return await getMemes()
@@ -8,18 +8,29 @@ export const fetchMemes = createAsyncThunk("memes/fetchMemes", async () => {
 
 interface MemeState {
   memeData: MemeData
+  searchedMemes: Meme[]
+  showSearchedMemes: boolean
   loading: "idle" | "pending" | "succeeded" | "rejected"
 }
 
 const initialState: MemeState = {
   memeData: { success: false, data: { memes: [] } },
+  searchedMemes: [],
+  showSearchedMemes: false,
   loading: "idle",
 }
 
 export const memeSlice = createSlice({
   name: "memes",
   initialState,
-  reducers: {},
+  reducers: {
+    setSearchedMemes: (state, action) => {
+      state.searchedMemes = action.payload
+    },
+    setShowSearchedMemes: (state) => {
+      state.showSearchedMemes = true
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchMemes.fulfilled, (state, action) => {
       state.loading = "succeeded"
@@ -27,5 +38,7 @@ export const memeSlice = createSlice({
     })
   },
 })
+
+export const { setSearchedMemes, setShowSearchedMemes } = memeSlice.actions
 
 export default memeSlice.reducer
