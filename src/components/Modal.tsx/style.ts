@@ -10,6 +10,7 @@ export const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `
 
 export const ModalBody = styled.div`
@@ -17,11 +18,17 @@ export const ModalBody = styled.div`
   border: 1px solid #2d2d2d9d;
   border-radius: 2px;
   padding: 2rem;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const MemeImg = styled.img`
-  width: auto;
-  height: 60vh;
+  /* width: auto;
+  height: 50vh; */
+  min-width: 30vh;
+  height: 50vh;
 `
 
 export const NewMemeTextForm = styled.form`
@@ -42,6 +49,7 @@ export const NewMemeBtn = styled.button`
   margin-top: 1rem;
   width: 12rem;
   align-self: center;
+  cursor: pointer;
 `
 
 export const LinkStatus = styled.p`
