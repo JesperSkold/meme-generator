@@ -1,14 +1,8 @@
 import styled from "styled-components"
 
-export const StyledSearchBar = styled.input`
-  padding: 1rem;
-  width: 30%;
-  margin-top: 2rem;
-  position: fixed;
-  `
-
-export const Wrapper = styled.div`
-  display: flex;
+export const Wrapper = styled.div<{showModal:boolean}>`
+  display: ${(props) => (props.showModal ?  null : "flex")};
+  visibility: ${(props) => (props.showModal ?  "hidden" : "visible")};
   flex-direction: column;
   align-items: center;
   color: white;
@@ -17,4 +11,11 @@ export const Wrapper = styled.div`
     margin: 7rem 0 0 0;
   }
 `
+
+export const StyledSearchBar = styled.input`
+  padding: 1rem;
+  width: 30%;
+  margin-top: 2rem;
+  position: fixed;
+  `  
 

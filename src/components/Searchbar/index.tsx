@@ -20,13 +20,13 @@ const Searchbar = () => {
 
   return (
     <>
-      {!showModal && (
-        <Wrapper>
+      {/* {!showModal && ( */}
+        <Wrapper showModal={showModal}>
           <StyledSearchBar placeholder="Search for memes..." onChange={(e) => searchMemes(e.target.value)} />
           {showSearchedMemes && searchedMemes.length !== memeData.data.memes.length && <h2>{searchedMemes.length} memes found</h2>}
           {searchedMemes.length === 0 && showSearchedMemes ? null : <h2>Click on a meme to customize it!</h2>}
         </Wrapper>
-      )}
+      {/* )} */}
     </>
   )
 }
