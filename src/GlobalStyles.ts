@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
   *{
+    font-family: 'Silkscreen', cursive;
     margin: 0;
     padding: 0;
   }

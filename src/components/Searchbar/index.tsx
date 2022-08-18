@@ -60,7 +60,11 @@ const Searchbar = () => {
             </h2>
           )}
         {searchedMemes.length === 0 && showSearchedMemes ? null : (
-          <h2>Click on a meme to customize it!</h2>
+          <h2>
+            {searchedMemes.length === 1
+              ? "Click on the meme to customize it"
+              : "Click on a meme to customize it!"}
+          </h2>
         )}
       </Wrapper>
     </>
