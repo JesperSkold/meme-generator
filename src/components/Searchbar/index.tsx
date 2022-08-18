@@ -54,7 +54,10 @@ const Searchbar = () => {
         />
         {showSearchedMemes &&
           searchedMemes.length !== memeData.data.memes.length && (
-            <h2>{searchedMemes.length} memes found</h2>
+            <h2>
+              {searchedMemes.length} meme
+              {searchedMemes.length === 1 ? null : "s"} found
+            </h2>
           )}
         {searchedMemes.length === 0 && showSearchedMemes ? null : (
           <h2>Click on a meme to customize it!</h2>
