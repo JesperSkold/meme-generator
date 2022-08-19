@@ -19,5 +19,6 @@ export interface NewMeme {
   data: {
     url: string,
     page_url: string
-  }
+  } 
+  error_message?: string
 }

@@ -5,7 +5,7 @@ import { AppDispatch, RootState } from "../../app/store"
 import { postNewMeme, toggleModalOff } from "../../features/modalSlice"
 import { NewMeme } from "../../interfaces/memeData"
 import Spinner from "../Spinner"
-import { ModalOverlay, ModalBody, MemeImg, NewMemeTextForm, NewMemeTextBox, NewMemeBtn, LinkStatus, MemeName } from "./style"
+import { ModalOverlay, ModalBody, MemeImg, NewMemeTextForm, NewMemeTextBox, NewMemeBtn, LinkStatus, MemeName, ErrorText } from "./style"
 
 const Modal = () => {
   const { modalMeme, newMeme, status } = useSelector((state: RootState) => state.modal)
@@ -42,6 +42,7 @@ const Modal = () => {
           {!newMeme.success && [...Array(modalMeme.box_count)].map((elem, i) => (
             <NewMemeTextBox key={i} type="text" placeholder={`Text ${i + 1}`} name={`boxes[${i}][text]`} onChange={(e) => handleChange(e)} />
           ))}
+          {newMeme.error_message && <ErrorText>No texts specified.</ErrorText>}
           {newMeme.success ? <NewMemeBtn onClick={(e) => copyTextHandler(e)}>Copy link to your meme</NewMemeBtn> : <NewMemeBtn>Generate your meme!</NewMemeBtn>}
             {copyTextBool && <LinkStatus>Link to meme successfully copied, share it with your friends!</LinkStatus>}
         </NewMemeTextForm>

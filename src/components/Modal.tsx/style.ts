@@ -40,7 +40,6 @@ export const MemeImg = styled.img`
   @media (max-height: 900px) {
     max-height: 35vh;
   }
-
 `
 
 export const NewMemeTextForm = styled.form`
@@ -55,7 +54,7 @@ export const NewMemeTextBox = styled.input`
   width: 80%;
   align-self: center;
 
-  &:first-child{
+  &:first-child {
     margin-top: 1rem;
   }
 `
@@ -72,7 +71,7 @@ export const LinkStatus = styled.p`
   align-self: center;
   color: white;
   margin-top: 1rem;
-  width: inherit;
+  width: min-content;
   text-align: center;
 `
 
@@ -80,4 +79,9 @@ export const MemeName = styled.h2`
   color: white;
   text-align: center;
   margin-bottom: 1rem;
+`
+
+export const ErrorText = styled.p`
+  color: white;
+  text-align: center;
 `
