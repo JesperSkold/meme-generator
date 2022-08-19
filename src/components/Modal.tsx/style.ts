@@ -32,8 +32,6 @@ export const MemeImg = styled.img`
   width: 50vh;
   max-height: 50vh;
   object-fit: contain;
-  /* min-width: 30vh;
-  height: 50vh; */
   @media (max-width: 950px) {
     width: inherit;
     height: auto;

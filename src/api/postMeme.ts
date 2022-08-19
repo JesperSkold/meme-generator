@@ -10,5 +10,3 @@ export const postMeme = async (payload: any) => {
   return data
 }
 
-/*
- */
