@@ -1,3 +1,32 @@
+# Meme Customizer
+
+## Description
+
+A seamless react app where you can search or pick and choose from popular memes and customize them and share them with your friends!
+
+## Links
+
+- [Deployed Site](<meme-customizer.netlify.app//> "meme-customizer.netlify.app")
+
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/89381381/185639540-c66998b7-1de9-4b04-ac22-05edbcb33da9.png)
+
+![image](https://user-images.githubusercontent.com/89381381/185639703-156cdf4e-1c0c-4f0c-89c7-558d06561070.png)
+
+![image](https://user-images.githubusercontent.com/89381381/185639897-0652fa24-9067-4808-b6ab-6d183e17371e.png)
+
+![image](https://user-images.githubusercontent.com/89381381/185640070-440fc6aa-150f-4fa2-92dc-49dbfe77a3f1.png)
+
+
+## Built With
+
+- TypeScript
+- React
+- Redux Toolkit
+- Redux Thunk
+- Styled Components
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
@@ -14,33 +43,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+## Author
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Jesper Olsson**
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [GitHub](https://github.com/JesperSkold)
+- [Email](mailto:skoldfold@gmail.com?subject=Hi)
