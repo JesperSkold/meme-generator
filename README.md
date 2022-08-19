@@ -6,7 +6,7 @@ A seamless react app where you can search or pick and choose from popular memes 
 
 ## Links
 
-- [Deployed Site](<meme-customizer.netlify.app//> "meme-customizer.netlify.app")
+- [Deployed Site](<https://meme-customizer.netlify.app/> "<https://meme-customizer.netlify.app")
 
 ## Screenshots
 
