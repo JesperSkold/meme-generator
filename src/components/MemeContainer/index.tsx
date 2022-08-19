@@ -11,7 +11,7 @@ const MemeContainer = () => {
 
   useEffect(() => {
     dispatch(fetchMemes())
-  }, [])
+  }, [dispatch])
 
   return (
     <Gallery>

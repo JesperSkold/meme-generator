@@ -1,9 +1,7 @@
 import React, { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { postMeme } from "../../api/postMeme"
 import { AppDispatch, RootState } from "../../app/store"
 import { postNewMeme, toggleModalOff } from "../../features/modalSlice"
-import { NewMeme } from "../../interfaces/memeData"
 import Spinner from "../Spinner"
 import { ModalOverlay, ModalBody, MemeImg, NewMemeTextForm, NewMemeTextBox, NewMemeBtn, LinkStatus, MemeName, ErrorText } from "./style"
 
