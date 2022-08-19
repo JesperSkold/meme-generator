@@ -31,7 +31,15 @@ export const Wrapper = styled.div<{ showModal: boolean }>`
   color: white;
 
   h2:nth-child(2) {
-    margin: 7rem 0 0 0;
+    margin: 8rem 0 0 0;
+  }
+
+  h2 {
+    @media (max-width: 515px) {
+      text-align: center;
+      font-size: inherit;
+      padding: 1rem;
+    }
   }
 `
 
@@ -48,7 +56,7 @@ export const StyledSearchBar = styled.input<{
     (scrollDirection === "upwards" && !showModal)
       ? 1
       : 0};
-      
+
   pointer-events: ${({ scrollDirection }) =>
     scrollDirection === "top" || scrollDirection === "upwards"
       ? "auto"
@@ -63,4 +71,8 @@ export const StyledSearchBar = styled.input<{
     scrollDirection === "downwards" ? slideUp : null};
 
   animation-duration: 0.3s;
+
+  @media (max-width: 550px) {
+    font-size: 0.53rem;
+  }
 `

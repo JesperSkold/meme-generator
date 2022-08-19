@@ -22,13 +22,27 @@ export const ModalBody = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 950px) {
+    width: 55vw;
+    height: auto;
+  }
 `
 
 export const MemeImg = styled.img`
-  /* width: auto;
+  width: 50vh;
+  max-height: 50vh;
+  object-fit: contain;
+  /* min-width: 30vh;
   height: 50vh; */
-  min-width: 30vh;
-  height: 50vh;
+  @media (max-width: 950px) {
+    width: inherit;
+    height: auto;
+  }
+
+  @media (max-height: 900px) {
+    max-height: 35vh;
+  }
+
 `
 
 export const NewMemeTextForm = styled.form`
@@ -42,6 +56,10 @@ export const NewMemeTextBox = styled.input`
   margin: 0.5rem;
   width: 80%;
   align-self: center;
+
+  &:first-child{
+    margin-top: 1rem;
+  }
 `
 
 export const NewMemeBtn = styled.button`
@@ -56,6 +74,8 @@ export const LinkStatus = styled.p`
   align-self: center;
   color: white;
   margin-top: 1rem;
+  width: inherit;
+  text-align: center;
 `
 
 export const MemeName = styled.h2`

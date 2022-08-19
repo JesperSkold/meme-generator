@@ -12,5 +12,18 @@ export const Gallery = styled.section`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-rows: repeat(auto-fit, 260px);
+  }
+
+  @media (max-width: 440px) {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    align-items: center;
   }
 `
