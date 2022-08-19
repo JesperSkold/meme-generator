@@ -9,7 +9,7 @@ export const StyledSpinner = styled.svg`
   transform: translate(-50%, -50%);
 
   & .path {
-    stroke: #701bdf;
+    stroke: #376672;
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
   }

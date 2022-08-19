@@ -14,7 +14,7 @@ export const ModalOverlay = styled.div`
 `
 
 export const ModalBody = styled.div`
-  background: #2d2d2d;
+  background: #1c232c;
   border: 1px solid #2d2d2d9d;
   border-radius: 2px;
   padding: 2rem;
@@ -46,12 +46,13 @@ export const NewMemeTextForm = styled.form`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 `
 
 export const NewMemeTextBox = styled.input`
   padding: 0.5rem;
   margin: 0.5rem;
-  width: 80%;
+  width: 50%;
   align-self: center;
 
   &:first-child {
@@ -84,4 +85,5 @@ export const MemeName = styled.h2`
 export const ErrorText = styled.p`
   color: white;
   text-align: center;
+  align-self: center;
 `

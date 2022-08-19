@@ -42,8 +42,8 @@ const Modal = () => {
           {!newMeme.success && [...Array(modalMeme.box_count)].map((elem, i) => (
             <NewMemeTextBox key={i} type="text" placeholder={`Text ${i + 1}`} name={`boxes[${i}][text]`} onChange={(e) => handleChange(e)} />
           ))}
-          {newMeme.error_message && <ErrorText>No texts specified.</ErrorText>}
-          {newMeme.success ? <NewMemeBtn onClick={(e) => copyTextHandler(e)}>Copy link to your meme</NewMemeBtn> : <NewMemeBtn>Generate your meme!</NewMemeBtn>}
+          {newMeme.error_message && <ErrorText>You need to specify text 1 or 2.</ErrorText>}
+          {newMeme.success ? <NewMemeBtn onClick={(e) => copyTextHandler(e)}>Copy link to your meme</NewMemeBtn> : <NewMemeBtn disabled={status === "pending"}>Generate your meme!</NewMemeBtn>}
             {copyTextBool && <LinkStatus>Link to meme successfully copied, share it with your friends!</LinkStatus>}
         </NewMemeTextForm>
       </ModalBody>
